@@ -1,0 +1,266 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Fira Sans", sans-serif;
+    color: #767070;
+    background-color: #ffffff;
+}
+
+a {
+    color: #ccd0c1;
+    text-decoration: none;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    padding: 10px;
+}
+
+@media only screen and (min-width: 900px) {
+    .main {
+        padding: 30px;
+    }
+}
+
+.slider {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.6s;
+}
+
+.slider li.is-visible {
+    transform: translateX(0);
+}
+
+.slider .yari {
+    height: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.slider li:first-of-type .image {
+    background-image: url(../img/img-1.jpg);
+}
+
+.slider li:nth-of-type(2) .image {
+    background-image: url(../img/img-2.jpg);
+}
+
+.slider li:nth-of-type(3) .image {
+    background-image: url(../img/img-3.jpg);
+}
+
+.slider li:nth-of-type(4) .image {
+    background-image: url(../img/img-4.jpg);
+}
+
+.slider .image {
+    background-size: cover;
+}
+
+.slider .content {
+    padding: 30px;
+    color: #ffffff;
+    background-color: #767070;
+}
+
+.slider .light-bg {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.slider .btn {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1em 1.6em;
+    margin-top: 1em;
+    font-size: 1.3rem;
+    color: #ffffff;
+    border-radius: 50em;
+    transition: background 0.3s;
+}
+
+.no-touch .slider .btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.slider li:nth-of-type(2) .content {
+    background-color: #ccd0c1;
+}
+
+.slider li:nth-of-type(3) .content {
+    background-color: #f3b96c;
+}
+
+.slider li:nth-of-type(4) .content {
+    background-color: #f46c6a;
+}
+
+.slider h2 {
+    font-size: 2.2rem;
+    margin-bottom: .4em;
+}
+
+.slider p {
+    font-size: 1.4rem;
+}
+
+.slider h2,
+.slider p {
+    line-height: 1.4;
+}
+
+@media only screen and (min-width: 900px) {
+    .slider li {
+        pointer-events: none;
+        z-index: 1;
+        transform: translateX(0);
+        transition: z-index 0s 0.6s;
+    }
+    .slider li.is-visible {
+        pointer-events: auto;
+        z-index: 3;
+        transition: z-index 0s 0s;
+    }
+    .slider li.is-visible.co z-index: 2;
+}
+
+.slider .yari {
+    height: 100%;
+    width: 50%;
+    float: right;
+}
+
+.slider .yari.content {
+    transform: translateX(200%);
+    transition: transform 0.6s 0s ease-in-out;
+}
+
+.slider .yari.image {
+    transform: translateX(100%);
+    transition: transform 0s 0.3s;
+}
+
+.slider li.is-visible .yari.content,
+.slider li.is-visible .yari.image {
+    transform: translateX(0%);
+}
+
+.slider li.is-visible .yari.content {
+    transition: transform 0.6s 0s ease-in-out;
+}
+
+.slider .content {
+    display: table;
+    padding: 0 40px;
+}
+
+.slider .content > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.slider .btn {
+    padding: 1.4em 2em;
+    font-size: 1.4rem;
+}
+
+.slider p {
+    font-size: 1.6rem;
+}
+
+.slider h2 {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+}
+
+.slider h2,
+.slider p {
+    line-height: 2;
+}
+
+
+}
+@media only screen and (min-width: 1170px) {
+    .slider .content {
+        padding: 0 90px;
+    }
+    
+    .slider h2 {
+        font-weight: 300;
+    }
+}
+.slider-navigation {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 30px;
+}
+.slider-navigation li {
+    display: inline-block;
+    margin: 0 .25em;
+}
+.slider-navigation li.selected a {
+    background-color: #ffffff;
+}
+.slider-navigation a {
+    display: block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    color: transparent;
+    white-space: nowrap;
+    text-indent: 100%;
+    overflow: hidden;
+    border: 1px solid #ffffff;
+}
+@media only screen and (min-width: 900px) {
+    .slider-navigation {
+        padding: 0.5em 1em;
+        background-color: rgba(0, 0, 0, 0.8);
+        transform: translateZ(2px) translateX(-50%);
+        transition: transform 0.3s;
+    }
+    
+    .slider-navigation.slider-animating {
+        transform: translateX(-50%) scale(1);
+    }
+    
+    .slider-navigation a {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        text-indent: 0;
+        border: none;
+        border-radius: 0;
+        color: #ffffff;
+    }
+    
+    .slider-navigation li.selected a {
+        background-color: transparent;
+        color: #f3b96c;
+    }
+}

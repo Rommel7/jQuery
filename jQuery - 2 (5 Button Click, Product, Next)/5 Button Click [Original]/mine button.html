@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            min-height: 100%;
+            font-size: 14px;
+        }
+        
+        .container {
+            position: relative;
+        }
+        
+        button {
+            display: inline-block;
+            position: absolute;
+            margin: 5px;
+            padding: 6px 10px;
+            background: #4393e6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            user-select: none;
+        }
+        
+        button.topleft {
+            top: 0;
+            left: 0;
+        }
+        
+        button.topright {
+            top: 0;
+            right: 0;
+        }
+        
+        button.bottomleft {
+            bottom: 0;
+            left: 0;
+        }
+        
+        button.bottomright {
+            bottom: 0;
+            right: 0;
+        }
+        
+        #main {
+            position: absolute;
+        }
+        
+        .menu {
+            border: 1px dashed #333;
+            width: 150px;
+            height: auto;
+            font-size: 14px;
+            position: absolute;
+            display: none;
+            top: 500px;
+            left: 55%;
+            color: orange;
+        }
+        
+        ul {
+            margin-top: 0;
+            margin-bottom: 0px;
+            margin-left: 20px;
+            padding: 0px;
+        }
+        
+        ul li {
+            text-decoration: none;
+            list-style: none;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        ul li:hover {
+            background-color: aquamarine;
+        }
+        
+        ul a {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--
+        <div class="row">
+            <div class="pull-left">
+                <button type="button" class="btn btn-lg btn-primary topleft" data-type="up">Click me!</button>
+            </div>
+            <div class="pull-right">
+                <button type="button" class="btn btn-lg btn-primary topright" data-type="up">Click me!</button>
+            </div>
+        </div>
+-->
+        <div class="row">
+            <button id="main" type="button" class="btn btn-lg btn-primary center" data-type="up">Click me!</button>
+            <div class="menu">
+                <ul>
+                    <li>AboutUs</li>
+                    <li>Services</li>
+                    <li>Portfolio</li>
+                    <li>Contact Us</li>
+                    <a href="" onclick="alert">
+                        <li>Home</li>
+                    </a>
+                    <a href="">
+                        <li>Home</li>
+                    </a>
+                    <a href="">
+                        <li>Home</li>
+                    </a>
+                    <a href="">
+                        <li>Home</li>
+                    </a>
+                    <a href="">
+                        <li>Home</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <!--
+        <div class="row">
+            <div class="pull-left">
+                <button type="button" class="btn btn-lg btn-primary bottomleft" data-type="down">Click me!</button>
+            </div>
+            <div class="pull-right">
+                <button type="button" class="btn btn-lg btn-primary bottomright" data-type="down">Click me!</button>
+            </div>
+        </div>
+--></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script>
+        $('button.btn-primary').click(function (e) {
+            var x = e.offsetX;
+            var y = e.offsetY;
+            var position = $(this).attr("data-type");
+            var button_height = $(this).height();
+            var button_width = $(this).width();
+            if (position == 'up') {
+                var element = $(e.target).siblings(".menu");
+                var element_height = element.height();
+                var element_width = element.width();
+                if (x <= button_width / 2) {
+                    x = x - element_width;
+                }
+                element.css({
+                    "left": x + "px"
+                    , "top": y + "px"
+                    , "display": "block"
+                });
+            }
+        })
+        $('menu>ul>li').click(function () {
+            $(this).closest("menu").hide();
+        })
+    </script>
+    <!------------------>
+</body>
+
+</html>
