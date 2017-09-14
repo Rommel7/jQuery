@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>"Has"</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+        // $("E:has())
+
+        // içində heç olmasa 1 "ul"  elementi olan "div"ləri seç.
+
+        $(document).ready(function() {
+            $("div:has(table)").css("background", "red");
+        });
+
+    </script>
+</head>
+
+<body>
+    <p>Paragraph in body.</p>
+    <div>
+        <p>Paragraph in div 1.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+    <div>
+        <table border="1">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+        </table>
+        <p>Paragraph in div 2.</p>
+        <!--
+        <div>
+            <ul>
+                <li>aa11</li>
+            </ul>
+        </div>
+-->
+    </div>
+</body>
+
+</html>

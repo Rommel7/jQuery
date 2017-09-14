@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Выбор соседних элементов.</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+        // Qardaş taglari tapmaq üçün - "div"i tapmaq istəyirik hansı ki, "p" tagindən sonra gəlir. 
+
+        $(document).ready(function() {
+            $("p + div").css("color", "red");
+        });
+
+    </script>
+</head>
+
+<body>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">CSS selectors</a>
+    <p>Paragraph in body.</p>
+    <!--    <h1>aa</h1>-->
+    <!--    <span>bb</span>-->
+    <div>
+        <p>Paragraph in div.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Получение значения атрибутов</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+        // Metod attr() HTML atriutun dəyərini qaytarır.
+        // Atribut olmasa undefined - qaytaracaq.
+
+        $(function() {
+            var p = $("p").attr("style");
+            var div = $("#output");
+            div.text("Atributun dəyəri: " + '"' + p + '"');
+        });
+
+    </script>
+</head>
+
+<body>
+    <p style="color: blue; font-weight: bold;" class="nese">Test string </p>
+    <div id="output"></div>
+</body>
+
+</html>

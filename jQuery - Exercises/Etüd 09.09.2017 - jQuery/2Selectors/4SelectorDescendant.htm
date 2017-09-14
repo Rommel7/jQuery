@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Выбор вложенных элементов (потомков)</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+        // "div"-in içindəki bütün "p" taglarını seç.
+
+        $(document).ready(function() {
+            $("div p").css("color", "red");
+        });
+
+    </script>
+</head>
+
+<body>
+    <p>Paragraph in body</p>
+    <div>
+        <p>Paragraph in div</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </div>
+</body>
+
+</html>

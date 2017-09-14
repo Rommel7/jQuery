@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Выборка по атрибутам.</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+        // $(" [ = ]")
+
+        // "target" atributu olan və bu atributu "text" dəyərinə malik olan bütün "a"ları seç.
+
+        // val()
+
+        $(document).ready(function() {
+            $("input[type=password]").val("admin");
+        });
+
+    </script>
+    <style>
+        span {
+            display: inline-block;
+            width: 80px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <span>login:</span><input type="text" /><br />
+    <span>password:</span><input type="password" />
+</body>
+
+</html>

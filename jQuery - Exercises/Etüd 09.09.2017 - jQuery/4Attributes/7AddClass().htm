@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Метод addClass()</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+        // addClass() - olan klassı overwrite etmeden. 
+
+        $(function() {
+            $("#First").addClass("testClassGreen");
+            $("#Second").addClass("testClassRed");
+            $("#Third").addClass("testClassBlue");
+        });
+
+    </script>
+
+    <style>
+        .testClassGreen {
+            color: Green;
+        }
+        
+        .testClassRed {
+            color: Red;
+        }
+        
+        .testClassBlue {
+            color: Blue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p id="First">
+        Test string 1
+    </p>
+    <p id="Second">
+        Test string 2
+    </p>
+    <p id="Third">
+        Test string 3
+    </p>
+</body>
+
+</html>

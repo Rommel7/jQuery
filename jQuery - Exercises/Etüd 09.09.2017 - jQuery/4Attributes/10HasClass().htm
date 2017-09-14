@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Метод hasClass().</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+        // hasClass(className) - "className" adlı classin olub olmadığını yoxlayır dəyər kimi true və false qaytarır.
+
+        $(function() {
+            var className = "class12";
+            if ($("p:first").hasClass(className)) {
+                alert("Tagdə göstərilən bu CSS-klassı vardır - " + className);
+            } else {
+                alert("Tagdə göstərilən bu CSS-klassı yoxdur");
+            }
+        });
+
+    </script>
+    <style>
+        .class1 {
+            color: Green;
+        }
+        
+        .class2 {
+            color: Red;
+        }
+        
+        .class3 {
+            color: Blue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p class="class12">
+        Test string 1
+    </p>
+    <p class="class2">
+        Test string 2
+    </p>
+    <p class="class3">
+        Test string 3
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Метод val()</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+        // val() 
+
+        $(function() {
+            $("#button1").click(function() {
+                $("#edit1").val("Hello world"); // İnputa yazmaq.
+            });
+
+            $("#button2").click(function() {
+                alert($("#edit1").val()); // İnputun dəyərini alert etmək.
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <input type="text" id="edit1" />
+    <button id="button1">Push me!</button>
+    <button id="button2">Get Text</button>
+</body>
+
+</html>

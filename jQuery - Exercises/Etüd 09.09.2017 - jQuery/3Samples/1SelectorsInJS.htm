@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Selector JavaScript</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script src="jquery-1.10.2.js"></script>
+
+    <script>
+//        window.addEventListener("load", JavaScriptSelection, true);
+//
+//        function JavaScriptSelection() {
+//            document.getElementsByTagName("p")[0].innerHTML = "<u>getElementsByTagName()</u> - taglı element seçildi";
+//            document.getElementsByName("input_background")[0].style.background = "yellow";;
+//            document.getElementsByClassName("bold_paragraph")[0].style.fontWeight = "bold";
+//            document.getElementById("red_paragraph").style.color = "red";
+//        }
+
+        // eq() - metod, lazımı elementi massivdə indexsinə görə seçmək üçün.
+                jQuery(document).ready(function() {
+                    $('p').eq('0').text("$('p') - getElementsByTagName");
+                    $('[name = "input_background"]').css('background', 'yellow');
+                    $('.bold_paragraph').css('fontWeight', 'bold');
+                    $('#red_paragraph').css('color', 'red');
+                });
+                console.log($("p").eq());
+
+    </script>
+</head>
+
+<body>
+    <p></p>
+    <input type="text" name="input_background" />
+    <p class="bold_paragraph"><u>getElementsByClassName()</u> - classlı element seçildi.</p>
+    <p id="red_paragraph"><u>getElementById()</u> - IDli element seçildi</p>
+</body>
+
+</html>
